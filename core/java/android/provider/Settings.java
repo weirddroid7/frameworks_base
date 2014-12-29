@@ -5376,7 +5376,6 @@ public final class Settings {
         private static final Validator AICP_LOCKSCREEN_WEATHER_STYLE_VALIDATOR =
                new SettingsValidators.InclusiveIntegerRangeValidator(0, 1);;
 
-
         /***************************
          * AICP System Settings end
          ***************************/
@@ -15149,6 +15148,26 @@ public final class Settings {
         private static final Validator LOCKSCREEN_ENABLE_POWER_MENU_VALIDATOR = BOOLEAN_VALIDATOR;
 
         /**
+         * AOKP Custom System Animations
+         * @hide
+         */
+        public static final String[] ACTIVITY_ANIMATION_CONTROLS = new String[] {
+                "activity_open",
+                "activity_close",
+                "task_open",
+                "task_close",
+                "task_to_front",
+                "task_to_back",
+                "wallpaper_open",
+                "wallpaper_close",
+                "wallpaper_intra_open",
+                "wallpaper_intra_close",
+        };
+        public static final String ANIMATION_CONTROLS_DURATION = "animation_controls_duration";
+
+        private static final Validator ANIMATION_CONTROLS_DURATION_VALIDATOR = ANY_INTEGER_VALIDATOR;
+
+        /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
          *
@@ -15199,6 +15218,7 @@ public final class Settings {
             AWARE_ALLOWED,
             NOTIFICATION_BUBBLES,
             LOCKSCREEN_ENABLE_POWER_MENU,
+            ANIMATION_CONTROLS_DURATION,
         };
 
         /**
@@ -15267,6 +15287,7 @@ public final class Settings {
             VALIDATORS.put(POWER_BUTTON_VERY_LONG_PRESS, POWER_BUTTON_VERY_LONG_PRESS_VALIDATOR);
             VALIDATORS.put(NOTIFICATION_BUBBLES, NOTIFICATION_BUBBLES_VALIDATOR);
             VALIDATORS.put(LOCKSCREEN_ENABLE_POWER_MENU,LOCKSCREEN_ENABLE_POWER_MENU_VALIDATOR);
+            VALIDATORS.put(ANIMATION_CONTROLS_DURATION, ANIMATION_CONTROLS_DURATION_VALIDATOR);
         }
 
         /**
